@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(black, rgb(56, 56, 56));
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 94%;
+    margin: 3%;
+    border: 1px solid rgb(75, 75, 75);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    height: 900px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+section {
+    padding: 15px 15px;
+}
+h1{
+    text-align: center;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 30px;
+}
+form{
+    width: 100%;
+    text-align: center;
+}
+input[type= "text"]{
+    width: 90%;
+    height: 35px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+input[type= "text"]:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+input[type= "date"]{
+    width: 90%;
+    height: 35px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+input[type= "date"]:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+textarea{
+    width: 90%;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+textarea:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+select{
+    margin: 0 5%;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    height: 40px;
+    width: 90%;
+}
+select:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+input[type= "number"]{
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    height: 40px;
+    width: 90%;
+    margin: 0 5%;
+}
+input[type= "number"]:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.imagen{
+    background-color: #5678EF;
+    color: white;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Seleccionar'; /* testo por defecto */
+    text-align: center;
+    height: 40px;
+    margin: 0 60px;
+    border: 1px solid #1b02ff;
+}
+.imagen:hover{
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.imagen input[type = "file"]{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+#action-button-delete{
+    width: 100px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    height: 30px;
+    background-color: #ff0000;
+    color: white;
+}
+#action-button-delete:hover{
+    box-shadow: 0 0 10px #ff0000;
+}
+button[type= "submit"]{
+    width: 100px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    height: 30px;
+    background-color: #1b02ff;
+    color: white;
+}
+button[type= "submit"]:hover{
+    box-shadow: 0 0 10px blue;
+}
+input[type= "reset"]{
+    width: 100px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+input[type= "reset"]:hover{
+    box-shadow: 0 0 10px black;
+}
+.platform-a{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-sub-platforms{
+    width: 100%;
+}
+@media (min-width: 450px) {
+    .container-sub-platforms{
+        width: 50%;
+    }
+    .imagen{
+        margin: 0 100px;
+    }
+}
+@media (min-width: 650px) {
+    .container-sub-platforms{
+        width: 33%;
+    }
+    .imagen{
+        margin: 0 180px;
+    }
+}
+
+@media (min-width: 850px) {
+    .container-sub-platforms{
+        width: 20%;
+    }
+    .imagen{
+        margin: 0 250px;
+    }
+}
+@media (min-width: 1000px) {
+    .container-sub-platforms{
+        width: 33%;
+    }
+    .imagen{
+        margin: 0 300px;
+    }
+}

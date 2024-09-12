@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <%- include('../partials/head.ejs') %>
 
-    <link rel="stylesheet" href="/css/stylesListProduct.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="/css/stylesListProduct.css" />
+  </head>
+  <body>
     <%- include('../partials/header.ejs') %>
-    <%- include('../partials/search-bar.ejs') %>
     <main>
-        <h1>Catálogo de Videojuegos</h1>
-        <div class="container-products">
-            <% products.forEach(product => { %>
-                <div class="products-cajas">
-                    <div class="product">
-                        <div class="container-img">
-                            <img src="/img/<%= product.images %>" alt="<%= product.name %>" id="imagen-product">
-                        </div>
-                        <div class="information-box">
-                            <h2><%= product.name %></h2>
-
-                            <p><%= product.description %></p>
-
-                            <p>
-                                <strong>Plataformas:</strong>
-                                <%= product.platforms %>
-                            </p>
-
-                            <p>
-                                <strong>Género:</strong>
-                                <%= product.genre %>
-                            </p>
-
-                            <p>
-                                <strong>Fecha de lanzamiento:</strong>
-                                <%= product.releaseDate %>
-                            </p>
-
-                            <p>
-                                <strong>Precio:</strong>
-                                <%= product.price %>
-                            </p>
-
-                            <a href="/products/<%= product.id %>" class="btn">
-                                Ver detalles
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <% }) %>
+      <h1>Catálogo</h1>
+      <div class="container-products">
+        <% if(products.length === 0) { %>
+        <div class="not-found">
+          <img src="/img/" alt="">
         </div>
+        <% } %> <% products.forEach(product => { %>
+        <div class="products-cajas">
+          <div class="product">
+            <div class="container-img">
+              <img
+                src="/img/<%= product.details.images %>"
+                id="imagen-product"
+                class="imagen-product"
+              />
+              <h2><%= product.name %></h2>
+            </div>
+            <div class="information-box">
+              
+
+              <p><%= product["details.description"]%></p>
+
+              <p>
+                <strong>Plataformas:</strong>
+                <%= product.platforms.map(platform => platform.name).join(', ')
+                %>
+              </p>
+
+              <p>
+                <strong>Género:</strong>
+                <%= product.genres.map(genre => genre.name) %>
+              </p>
+
+              <p>
+                <strong>Fecha de lanzamiento:</strong>
+                <%= product.release_date %>
+              </p>
+
+              <p>
+                <strong>Precio:</strong>
+                <%= product.price %>
+              </p>
+
+              <a href="/products/<%= product.id %>" class="btn">
+                Ver detalles
+              </a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
     </main>
     <%- include('../partials/footer.ejs') %>
-</body>
+  </body>
+  <script src="/js/productsList.js"></script>
 </html>

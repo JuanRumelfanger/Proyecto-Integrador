@@ -1,268 +1,117 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/*position-flexbox*/
 
 body {
     font-family: 'Roboto';
-    background-color: rgb(86, 97, 143);
+    /* background-color: rgba(192, 192, 192, 0.8); */
 }
- 
 
-.haeder-section1{
-    display: flex;
-    margin: auto;
+li {
+    list-style: none;
 }
-.burger-menu{
-    display: flex;
-    margin: auto;
-    margin-left: 20px;
-}
-.user-option{
-    display: flex;
-    margin: auto;
-    margin-right: 20px;
-}
-.info-product{
-    width: 300px;
-    color:rgb(28, 183, 240);
-    align-items:start;
-    text-align: left;
-    margin-left: 10px;
-}
-.section-button{
-    display: flex;
-    margin-right: 100px;
-}
-.directory{
-    margin-left: 35px;
-}
-.list-detail li{
-    padding: 5px 0px;
-}
-.list-detail h2{
 
-    padding-bottom: 10px;
-}
-.header-product{
-    display: flex;
-  
-    border: blue 5px;
-}
-/*colors-and-styles*/
-a{
+a {
     text-decoration: none;
-  
-}   
-.producto-user{
-    background-color: rgb(86, 97, 143);
-}
-.product-detail{
-    margin-top: 30px;
-    padding: 20px;
+    color: inherit;
 }
 
-.image-product{
-    display: flex;
-    margin: 25px 0px 25px 15px;
-}
-
-.image-product img{
-    border: solid rgb(99, 99, 168) 6px;
-}
-
-.bar-search{
-    width: 340px;
-    margin: auto;
-    text-align: left;
-    padding: 5px;
- 
-    font-size: 10px;
+a,
+img,
+span {
+    display: block;
 }
 
 
-
-.container-carrusel{
-    display: flex;
-    margin: auto;
-    background-color:  rgb(99, 99, 168);
-    width: auto;
-    padding: 30px;
-  }
-  
-.container-carrusel ul, li {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-  }
-  
-  ul.slider{
-    position: relative;
-    width: 800px;
-    height: 300px;
-  }
-  
-.container-carrusel  ul.slider li {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      opacity: 0;
-      width: inherit;
-      height: inherit;
-      transition: opacity .5s;
-
+.options-admin {
+    padding: 30px 10px;
 }
-.container-carrusel ul{
-    display: flex;
-    padding-left: 30%;
+
+.image-product img {
+    margin: 30px 0px 0px 30px;
+    border: solid;
+    border-color: #909ca4;
 }
-  ul.slider li img{  
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-    height: 300px;
+
+.info-product {
+    text-align: center;
+    flex: 1;
+}
+
+.img-cover {
+    width: 520px;
     object-fit: cover;
-  }
-  
-  ul.slider li:first-child {
-      opacity: 1; /*Mostramos el primer <li>*/
-  }
-  
-  ul.slider li:target {
-      opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
-  }
-
-/*icons*/
-
-#burger-menu{
-    color: blue;
-    font-size: 30px;
-}
-#user-option{
-    color: blue;
-    font-size: 30px;
-}
-#arrow1{
-    display: inline-flex;
-    justify-content: center;
-    width: 100px;
-}
-#arrow2{
-    display: flex;
-    justify-content: center;
 }
 
-/*texts*/
-
-.info-app{
+.image-product {
     display: flex;
 }
-.product-description{
+
+.buy-now,
+.gift-button {
+    background-color: #3498db;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover,
+.gift-button:hover {
+    background-color: #297fb8;
+}
+
+.container-juegos {
+    max-width: 600px;
+    text-align: left;
+}
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+    padding-left: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.title-name {
+    padding: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.text-description {
+    margin: 15px 0 20px 20px;
+
+}
+
+.juegos {
     display: flex;
-    width: 100%;
-    margin: auto;
-    margin-top: 0px;
-    padding: 15px;
+}
+
+.product-detail {
+    margin-left: 40px;
+}
+
+.oval-list li {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.oval-list li strong {
+    display: inline-block;
+    padding: 8px;
+    background-color: #3498db;
+    color: #000000;
+    border-radius: 13px;
+}
+
+.oval-list li ul {
     padding-left: 20px;
-   
-    font-size: 20px;
-    align-items: flex-start;
+    /* Ajusta el relleno según sea necesario */
 }
-
-.product-description h2{
-    text-align: left; 
-    font-family: Arial Black; 
-    font-weight: bold; font-size: 50px; 
-    background: #071969cd; 
-    -webkit-background-clip: text; 
-    -moz-background-clip: text; 
-    background-clip: text; 
-    color: transparent; 
-    text-shadow: 0px 3px 3px rgba(62, 135, 184, 0.4),0px -1px 1px rgba(0,0,0,0.3);
-}
-
-/*animations*/
-
-.buy-now{
-    background: #34326c; /* color de fondo */
-    color: #08063f; /* color de fuente */
-    border: 2px solid #4741d7; /* tamaño y color de borde */
-    padding: 16px 20px;
-    border-radius: 3px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-align: left;
-    font-size: 18px;
-    margin: 5px;
-  }
-  .buy-now {
-    color: #fff; /* color de fuente hover */
-  }
-  .buy-now::after {
-    content: "";
-    background: #4741d7; /* color de fondo hover */
-    position: absolute;
-    z-index: -1;
-    padding: 16px 20px;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 100%;
-    right: -100%;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-  }
-  .buy-now:hover::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-  }
-
-
-  .gift-button{
-    background: #34326c; /* color de fondo */
-    color: #08063f; /* color de fuente */
-    border: 2px solid #4741d7; /* tamaño y color de borde */
-    padding: 16px 20px;
-    border-radius: 3px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-align: left;
-    font-size: 18px;
-    margin: 5px;
-  }
-  .gift-button{
-    color: #fff; /* color de fuente hover */
-  }
-  .gift-button::after {
-    content: "";
-    background: #4741d7; /* color de fondo hover */
-    position: absolute;
-    z-index: -1;
-    padding: 16px 20px;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 100%;
-    right: -100%;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-  }
-  .gift-button:hover::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-  }

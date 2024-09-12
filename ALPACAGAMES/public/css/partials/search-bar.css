@@ -1,13 +1,13 @@
+header{
+    height: 170px;
+}
 #search-nav-bar {
-    width: 100%;
     display: flex;
     /* background-color: rgb(18, 18, 18); */
     background-color: #222429;
-    justify-content: flex-end;
-    padding:  0.8rem 5%;
     font-family: 'roboto';
-    font-size: 1.2rem;
-    align-items: center;
+    width: 400px;
+    margin: 100px 30px 20px 30px;
 }
 
 .search-bar {
@@ -15,10 +15,10 @@
     background-color: #fff;
     border-radius: 5px;
     width: 100%;
-    max-width: 400px;
-    margin-right: 1.5rem;
 }
-
+ #productsText {
+    color: #fff;
+ }
 .search-bar .lupa,
 .search-bar #search {
     color: #000;
@@ -72,12 +72,33 @@
     display: none;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .icon-wishList, .icon-cart {
         display: block;
         min-width: auto;
     }
     .wishList, .cart {
         display: none;
+    }
+    
+} */
+@media (min-width: 640px) {
+    #search-nav-bar {
+        display: flex;
+        /* background-color: rgb(18, 18, 18); */
+        background-color: #222429;
+        font-family: 'roboto';
+        width: 400px;
+        margin: 30px 0 50px 110px;
+    }
+    
+    .search-bar {
+        display: flex;
+        background-color: #fff;
+        border-radius: 5px;
+        width: 100%;
+    }
+    header{
+        height: 120px;
     }
 }

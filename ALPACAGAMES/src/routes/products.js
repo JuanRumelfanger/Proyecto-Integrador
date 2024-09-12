@@ -5,6 +5,7 @@ const upload = require('../middlewares/productImage.js');
 const usersController = require('../controllers/usersController.js');
 
 router.get('/', productsController.listProducts);
+router.get('/search', productsController.search)
 
 // CREAR UN PRODUCTO
 router.get('/create', productsController.create);
@@ -15,13 +16,10 @@ router.get('/:id', productsController.productsDetail);
 
 // EDITAR UN PRODUCTO
 router.get('/:id/edit', productsController.edit);
-router.put('/:id/edit', productsController.update);
+router.put('/:id/edit', upload.single('images'), productsController.update);
 
 // ELIMINAR UN PRODUCTO
 router.delete('/delete/:id', productsController.destroy);
-
-// COMPRAR UN PRODUCTO
-router.get('/:id/shop', productsController.shop);
 
 /* Rutas de usuarios */
 router.get('/login', usersController.login);

@@ -4,81 +4,119 @@
 <head>
 
     <%- include('../partials/head.ejs') %>
-
+    <link rel="stylesheet" href="/css/styleEditProduct.css" />
 
 </head>
 
 <body>
 
     <%- include('../partials/header') %>
+        <main>
+            <h1>Editar Producto</h1>
+            <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" class="form" aling="center"
+                enctype="multipart/form-data">
+                    <h3>Cambiar Nombre del Juego</h3>
+                <input type="text" name="name" id="name" class="controls" placeholder="Nombre del Juego"
+                    value="<%= product.name %>">
+                <section class="photo-cover">
+                    <h3>Cambiar Foto de portada del Juego</h3>
+                    <input type="file" name="images" accept=".jpg, .jpeg, .png">
+                    <div class="imagen">
+                        <img src='/img/<%= product.details.images %>' alt='<%= product.name %>' width="100px">
+                    </div>
+                </section>
+                <section class="launch">
+                    <h3>Modificar Fecha de Lanzamiento</h3>
+                    <input type="date" name="releaseDate" id="releaseDate">
+                </section>
+                <section class="Description">
+                    <h4>Modificar Descripcion</h4>
+                    <textarea name='description' required> <%= product.details.description %> </textarea>
+                </section>
+                <section class="genre">
+                    <h3>Cambiar Genero</h3>
+                    <select name="genre" id="genre">
+                        <option value="Accion" <%=product.genres[0].name=='Accion' ? 'selected' : '' %> >Accion</option>
+                        <br>
+                        <option value="Deportes" <%=product.genres[0].name=='Deportes' ? 'selected' : '' %> >Deportes
+                        </option><br>
+                        <option value="Sandbox" <%=product.genres[0].name=='Sandbox' ? 'selected' : '' %> >Sandbox
+                        </option><br>
+                        <option value="Estrategia" <%=product.genres[0].name=='Estrategia' ? 'selected' : '' %>
+                            >Estrategia</option><br>
+                        <option value="Aventura" <%=product.genres[0].name=='Aventura' ? 'selected' : '' %> >Aventura
+                        </option><br>
+                        <option value="Shooter" <%=product.genres[0].name=='Shooter' ? 'selected' : '' %> >Shooter
+                        </option><br>
+                        <option value="RPG" <%=product.genres[0].name=='RPG' ? 'selected' : '' %> >RPG</option><br>
+                        <option value="Survival" <%=product.genres[0].name=='Survival' ? 'selected' : '' %> >Survival
+                        </option><br>
+                        <option value="Arcade" <%=product.genres[0].name=='Arcade' ? 'selected' : '' %> >Arcade</option>
+                        <br>
+                        <option value="Terror" <%=product.genres[0].name=='Terror' ? 'selected' : '' %> >Terror</option>
+                        <br>
+                        <option value="Minijuegos" <%=product.genres[0].name=='Minijuegos' ? 'selected' : '' %>
+                            >Minijuegos</option><br>
+                        <option value="Cartas" <%=product.genres[0].name=='Cartas' ? 'selected' : '' %> >Cartas</option>
+                        <br>
+                        <option value="Otro" <%=product.genres[0].name=='Otro' ? 'selected' : '' %> >Otro</option><br>
+                    </select>
+                </section>
+                <h3>Editar Precio</h3>
+                <input type="number" name="price" id="price" class="controls" placeholder="Precio" step="0.01"
+                    value="<%= product.price %>">
 
-    <%- include('../partials/search-bar') %>
+                <h3>Editar Plataforma</h3>
+                <div class="platform-a">
+                    <div class="container-sub-platforms">
+                        <input type="checkbox" name="platforms" id="nintendoSwitch" value="Nintendo Switch" <% if
+                            (product.platforms.some(platform=> platform.name === 'Nintendo Switch')) { %> checked <% } %> />
+                            <label for="nintendoSwitch">Nintendo Switch</label>
+                    </div>
+                    <div class="container-sub-platforms">
+                        <input type="checkbox" name="platforms" id="playStation4" value="PlayStation 4" <% if
+                            (product.platforms.some(platform=> platform.name === 'PlayStation 4')) { %> checked <% } %> />
+                            <label for="playStation4">PlayStation 4</label>
+                    </div>
+                    <div class="container-sub-platforms">
+                        <input type="checkbox" name="platforms" id="xboxOne" value="Xbox One" <% if (product.platforms.some(platform=>
+                        platform.name === 'Xbox One')) { %> checked <% } %> />
+                            <label for="xboxOne">Xbox One</label>
+                    </div>
+                    <div class="container-sub-platforms">
+                        <input type="checkbox" name="platforms" id="pc" value="PC" <% if (product.platforms.some(platform=>
+                        platform.name === "PC")) { %> checked <% } %> />
+                            <label for="pc">PC</label>
+                    </div>
+                    <div class="container-sub-platforms">
+                        <input type="checkbox" name="platforms" id="dispositivosMoviles" value="Dispositivos móviles" <% if
+                            (product.platforms.some(platform=> platform.name === 'Dispositivos móviles')) { %> checked <% } %> />
+                            <label for="dispositivosMoviles">Dispositivos Móviles</label>
+                    </div>
+                </div>
+                <h3>Editar Tamaño de descarga</h3>
+                <input type="text" name="downloadSize" id="downloadSize" class="controls"
+                    value="<%= product.details.size %>">
 
-    <h1>Editar Producto</h1>
-    <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" class="form" aling="center">
-        <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
-            minlength="5" required>
-        <section class="photo-cover">
-            <h3>Cambiar Foto de portada del Juego</h3>
-            <input type="file" name="avatar" accept="image/*">
-        </section>
-        <section class="launch">
-            <h3>Modificar Fecha de Lanzamiento</h3>
-            <input type="date" name="launch" id="launch" min="2023-08-01" max="2045-01-01" required>
-        </section>
-        <section class="Description">
-            <h4>Modificar Descripcion</h4>
-            <input type="text" name="address" id="address" class="controls" placeholder="Descripcion">
-        </section>
-        <section class="genre">
-            <h3>Cambiar categoría</h3>
-            <select name="genre" id="genre">
-                <option value="Accion">Accion</option><br>
-                <option value="Deportes">Deportes</option><br>
-                <option value="Sandbox">Sandbox</option><br>
-                <option value="Estrategia">Estrategia</option><br>
-                <option value="Aventura">Aventura</option><br>
-                <option value="Shooter">Shooter</option><br>
-                <option value="RPG">RPG</option><br>
-                <option value="Survival">Survival</option><br>
-                <option value="Arcade">Arcade</option><br>
-                <option value="Terror">Terror</option><br>
-                <option value="Minijuegos">Minijuegos</option><br>
-                <option value="Cartas">Cartas</option><br>
-                <option value="Otro">Otro</option><br>
-            </select>
-        </section>
-        <input type="text" name="other-game" id="other-game" class="controls" placeholder="Otro tipo" minlength="6"
-            required>
-        <h3>Editar Precio</h3>
-        <input type="text" name="price" id="price-product" class="controls" placeholder="Precio" minlength="5" required>
+                <h3>Editar Sistemas operativos</h3>
+                <input type="text" name="os" id="os" class="controls" value="<%= product.details.requiments.os %>">
 
-        <h3>Editar Plataforma</h3>
-        <input type="text" name="platforms" id="platforms" class="platforms" placeholder="Plataforma" minlength="2">
+                <h3>Editar Almacenamiento requerido</h3>
+                <input type="text" name="storage" id="storage" class="controls"
+                    value="<%= product.details.requiments.storage %>">
 
-        <h3>Editar Requisitos</h3>
-        <input type="text" name="releaseDate" id="releaseDate" class="controls" inlength="5">
+                <section class="buttons">
+                    <button type="submit">Enviar</button>
+                    <input href="/products/<%= product.id%>" type="reset" name="cancel" value="Cancelar" id="cancel">
+                </section>
 
-        <h3>Editar Sistemas operativos</h3>
-        <input type="text" name="systemReq" id="systemReq" class="controls" inlength="5">
-
-        <h3>Editar Almacenamiento requerido<h3>
-        <input type="number" name="downloadSize" id="downloadSize" class="controls" >
-
-        <section class="buttons">
-            <button>Enviar</button>
-            <input type="reset" name="cancel" value="Cancelar" id="cancel">
-
-            
-
-        </section>
-
-    </form>
-    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                <button type="submit" class="action-button delete">ELIMINAR</button>
-        </form>
-    <%- include('../partials/footer') %>
-
+            </form>
+            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit" id="action-button-delete">ELIMINAR</button>
+            </form>
+        </main>
+        <%- include('../partials/footer') %>
+            <script src="/js/validations.js"></script>
 </body>
 
 </html>

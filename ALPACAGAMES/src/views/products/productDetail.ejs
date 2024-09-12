@@ -1,74 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/stylesDetails.css">
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" href="/css/stylesDetails.css" />
 </head>
+
 <body>
+  <%- include('../partials/header') %>
+  %>
 
-    <%- include('../partials/header') %>
-
-    <%- include('../partials/search-bar') %>
-
-    <main>
-    
+  <main>
     <section class="producto-user">
-        <article class="image-product">
-                <img src="/img/<%= product.images %>" width="400px" id="ima">           
-                <div class="info-product">
-                    <h2>$<%= product.price %></h2>
-                    <button class="buy-now">Comprar</button>
-                    <button class="gift-button">regalar</button>
-                </div>
-                <article class="product-description">
-                    <div>
-                        <h2><%= product.name %></h2>
-                        <p><%= product.description %></p>
-                    </div>
-                </article>
-        </article>    
+      <article class="image-product">
+        <div>
+          <% 
+          let imgs = ['/img/mk1.jpg', '/img/mk2.jpg', '/img/mk3.jpg', '/img/mk4.jpg', '/img/mk5.jpg'];
+          %>
 
-        <div class="container-carrusel">
-            <i class="fa-solid fa-circle-left" id="arrow1"></i> <i class="fa-solid fa-circle-right" id="arrow2"></i>
-                <ul class="slider">
-                    <li id="slide1">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg"/>
-                    </li>
-                    <li id="slide2">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/sunset.jpg"/>
-                    </li>
-                    <li id="slide3">
-                        <h1>Ejemplo con otros elementos</h1>
-                        <p>Esto es un párrafo de ejemplo para comprobar que podemos meter cualquier tipo de elementos en el slider</p>
-                        <a href="https://kikopalomares.com/">¡Corre a mi web para más contenido!</a>
-                    </li>
-                </ul>
-                
+          <% for (let i = 0; i < imgs.length; i++) { %>
+            <% //console.log(locals); %>
+          <% if (product.id === i + 1) { %>
+          <img src="<%= imgs[i] %>" class="img-cover" alt="Imagen <%= i + 1 %>" />
+          <% } %>
+          <% } %>
+
+          <!-- <img src="/img/mk1.jpg" class="img-cover" /> -->
+        </div>
+        <div class="info-product">
+          <div>
+            <h2 class="title-name">
+              <%= product.name %>
+            </h2>
+            <h2>$<%= product.price %>
+              <div>
+                <h2 class="subtitle">Detalles del juego</h2>
+                <p>
+                  <%= product.details.description %>
+                </p>
+              </div>
+            </h2>
           </div>
+          <div>
+            <button class="buy-now">Comprar</button>
+            <button class="gift-button">regalar</button>
+          </div>
+        </div>
+        <!-- <article class="product-description">
+            <div>
 
-        <section class="product-detail">
+              <p>
+                <%= product.details.description %>
+              </p>
+            </div>
+          </article> -->
+      </article>
 
-        <article class="list-detail">
-            <h2>Detalles del Producto</h2>
-            <ul>
-                <li type="none"><strong>Plataformas:</strong> <%= product.platforms%></li>
-                <li type="none"><strong>Género:</strong> <%= product.genre %></li>
-                <li type="none"><strong>Fecha de Lanzamiento:</strong> <%= product.releaseDate %></li>
-                <li type="none"><strong>Precio:</strong> <%= product.price %></li>
-                <li type="none"><strong>Tamaño de Descarga:</strong> <%= product.downloadSize %></li>
-                <li type="none"><strong>Requisitos del Sistema:</strong></li>
-                <ul>
-                    <li type="none"><strong>Sistema Operativo:</strong> <%= product.systemReq.os %></li>
-                    <li type="none"><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
-                </ul>
-            </ul>
-        </article>
-        <article class="lore-product">
 
-        </article>
+      <div class="juegos">
+        <section class="container-juegos">
+          <h2 class="title">Descripción</h2>
+          <p class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates obcaecati
+            reprehenderit molestiae
+            debitis voluptas consectetur illo laboriosam? Harum amet quae doloremque numquam reprehenderit. Totam
+            deleniti soluta similique sunt adipisci, magni suscipit excepturi aperiam placeat ipsum corporis minus
+            fugit. Eius magnam impedit sunt quam est assumenda, dolore debitis commodi pariatur, fugiat maxime
+            voluptatum minus provident nesciunt temporibus ut accusantium quia laborum neque ad illo ducimus expedita!
+            Vel architecto dolorem consequatur eius sunt, asperiores porro rem placeat a nobis. At, assumenda.
+            Dignissimos laborum quae ad! Commodi alias ducimus necessitatibus consectetur ipsa iure itaque id. Soluta
+            eveniet porro incidunt, eius, nihil labore reprehenderit adipisci doloribus pariatur dolorum maxime,
+            veritatis esse qui quasi magni ea. Quidem esse saepe veritatis sed ut beatae quis doloremque!</p>
+          <p class="text-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vitae doloremque voluptas, recusandae
+            iusto natus? Iste harum at maxime, perspiciatis fuga optio ipsum obcaecati aperiam labore quod cum iusto
+            quidem sequi commodi sit earum ea necessitatibus, dolores quos asperiores nam eligendi nulla quas. Ipsam
+            perferendis optio ea quidem id dolorum?
+          </p>
         </section>
+
+        <section class=" product-detail">
+          <article class="list-detail">
+            <h2 class="title">Detalles del Producto</h2>
+            <ul class="oval-list">
+              <li type="none">
+                <strong>Plataformas:</strong>
+                <%= product.platforms.map(platform=> platform.name).join(', ')
+                    %>
+              </li>
+              <li type="none">
+                <strong>Género:</strong>
+                <%= product.genres.map(genre=> genre.name) %>
+              </li>
+              <li type="none">
+                <strong>Fecha de Lanzamiento:</strong>
+                <%= product.release_date %>
+              </li>
+              <li type="none"><strong>Precio:</strong>
+                <%= product.price %>
+              </li>
+              <li type="none">
+                <strong>Tamaño de Descarga:</strong>
+                <%= product.details.size %>
+              </li>
+              <li type="none"><strong>Requisitos del Sistema:</strong></li>
+              <ul>
+                <li type="none">
+                  <strong>Sistema Operativo:</strong>
+                  <%= product.details.requiments.os %>
+                </li>
+                <li type="none">
+                  <strong>Almacenamiento Requerido:</strong>
+                  <%= product.details.requiments.storage %>
+                </li>
+              </ul>
+              <% if (!locals.userAreLogged){ %>
+                
+              <% }else if (locals.userAreLogged.id == 1){ %>
+                  <strong class="options-admin"><li><a href="/products/<%= product.id %>/edit">Opciones de administrador</a></li></strong>
+              <% } %>
+            </ul>
+          </article>
+          <article class="lore-product"></article>
+        </section>
+
+
     </section>
-    </main>
-    <%- include('../partials/footer') %>
+    </div>
+  </main>
+  <%- include('../partials/footer') %>
 </body>
+
 </html>

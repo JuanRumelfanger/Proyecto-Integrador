@@ -1,93 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-
+  <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/stylesLogin.css">
+    <link rel="stylesheet" href="/css/stylesLogin.css" />
+  </head>
 
-</head>
-
-
-<body>
-
+  <body>
     <%- include('../partials/header') %>
-
-    <%- include('../partials/search-bar') %>
-
-    <div class="mensaje-1">
+    <main>
+      <div class="conteiner-all">
         <marquee>Formulario de Login</marquee>
-    </div>
-    <div class="conteiner-otros" align="center">
         <div class="conteiner-logo">
-            <img src="/img/Alpaca-celu.svg" alt="logo" id="logo-AG">
+          <img src="/img/Alpaca-celu.svg" alt="logo" id="logo-AG" />
         </div>
-        <div class="conteiner-mensaje">
-            <h3>Inicia sesion con:</h3>
-        </div>
-        <div class="conteiner-logos-redes">
-            <div class="conteiner-logo-facebook">
-                <i class="fab fa-facebook-square" id="logos-redes"></i>
-            </div>
-            <div class="conteiner-logo-google">
-                <i class="fab fa-google" id="logos-redes"></i>
-            </div>
-            <div class="conteiner-logo-chrome">
-                <i class="fab fa-chrome" id="logos-redes"></i>
-            </div>
-        </div>
-        <div class="conteiner-logos-redes-1">
-            <div class="conteiner-logo-twitter">
-                <i class="fab fa-twitter" id="logos-redes"></i>
-            </div>
-            <div class="conteiner-logo-instagram">
-                <i class="fab fa-instagram" id="logos-redes"></i>
-            </div>
-            <div class="conteiner-logo-spotify">
-                <i class="fab fa-spotify" id="logos-redes"></i>
-            </div>
-        </div>
-
-    </div>
-    <div class="conteiner-login">
-        <div class="conteiner-mensaje-2">
-            <a class="mensaje-2">------ O INICIA SESION CON: -----</a>
-        </div>
+        <a class="mensaje-2">INICIA SESION</a>
         <form action="/users/login" method="POST">
-            <class class="caja-email">
-                <label for="email">
-                     <input type="email" name="email" placeholder="Correo electrónico o número de teléfono" class="email">
-                </label>      
-                <%if(locals.errors && errors.email) { %>
-                    <div class="container-error-email">
-                        <%= errors.email.msg%>       
-                    </div>
-                <% } %>
-            </class>
-            <class class="caja-contraseña">
-                <label for="password">
-                    <input type="password" name="password" placeholder="Contraseña">
-                </label>
-            </class>
-            <div class="iniciar-sesion">
-            <button type="submit">Iniciar sesion</button>
-                <div class="rememberMe">
-                    <label for="rememberMe">Recuerdame</label>
-                    <input type="checkbox" name="rememberMe">
-                </div>
+          <class class="caja-email">
+            <div class="label">
+              <label for="email" id="label">Correo electrónico</label>
             </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingrese un correo electrónico"
+              class="email"
+              id="email"
+            />
+
+            <%if(locals.errors && errors.email) { %>
+            <div class="container-error-email"><%= errors.email.msg%></div>
+            <% } %>
+          </class>
+          <class class="caja-contraseña">
+            <div class="label">
+              <label for="password" id="label">Contraseña</label>
+            </div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+              id="password"
+            />
+          </class>
+          <div class="iniciar-sesion">
+            <button type="submit">Iniciar sesion</button>
+            <div class="rememberMe">
+              <label for="rememberMe" id="label">Recuerdame</label>
+              <input type="checkbox" name="rememberMe" />
+            </div>
+          </div>
         </form>
-    
         <div class="caja-mensaje-4">
-            <a href="/register" id="mensaje-4">Crea una cuenta gratis</a>
+          <a href="/register" id="mensaje-4">Crea una cuenta gratis</a>
         </div>
-        <div class="caja-mensaje-5">
-            <a id="mensaje-5">¿No puedes iniciar sesion?</a>
-        </div>
-    </div>
-
+      </div>
+    </main>
     <%- include('../partials/footer') %>
-
-</body>
-
+    <script src="/js/validationsLogin.js"></script>
+  </body>
 </html>

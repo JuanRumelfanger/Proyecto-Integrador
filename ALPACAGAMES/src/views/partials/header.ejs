@@ -1,17 +1,36 @@
 <header>
     <div clase="detail-header">
-        <a class="header-logo" href="/"><img class="logo-header" src="/img/Alpaca-celu.svg" id="logo" alt="logo"></a>
-        <a class="link-header-detail-header" id="productsText" href="/products">Productos</a>
+      <a class="header-logo" href="/"
+        ><img
+          class="logo-header"
+          src="/img/Alpaca-celu.svg"
+          id="logo"
+          alt="logo"
+      /></a>
     </div>
   
     <% if(!locals.isLogged) { %>
     <a class="link-header-login-header" href="/users/login">Login</a>
     <a class="link-header-register-header" href="/users/register">Registro</a>
-    <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
+    <a class="icon-user" id="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
     <% } else {%>
-    <a id="saludo">¡Hola <%= locals.userAreLogged.name %>!</a>
-    <a href="/users/logout" id="cerrar-sesion"><button type="submit" id="submit">Cerrar sesión</button></a>
-    <a class="logo-header-2-a"><img class="logo-header-2" src="/img/avatars/<%= locals.userAreLogged.avatar%>"></a>
+      <% console.log(locals); %>
+      <div>
+        <% console.log(locals.userAreLogged.first_name )%>
+        <h4 id="saludo">¡Hola <%= locals.userAreLogged.first_name %>!</h4>
+        <img class="logo-header-2-a" width="20px" src="/img/avatars/user_icon_001.jpg">
+        <a href="/users/logout" id="cerrar-sesion"><button type="submit" id="submit">Cerrar sesión</button></a>
+      </div>
     <% } %>
-    
+
+
+  
+  <nav id="search-nav-bar">
+    <form class="search-bar" method="get" action="/products/search">
+      <button type="button" class="btn-search"><i class="fa-solid fa-magnifying-glass lupa"></i></button>
+      <input type="search" name="search" id="search" placeholder="Buscar en la tienda" autocomplete="off">
+    </form>
+  </nav>
+  
+  <script src="/js/header.js"></script>
 </header>

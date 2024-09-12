@@ -2,77 +2,74 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/stylesRegister.css">
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/stylesRegister.css" />
 </head>
 
 <body>
-
-
-    <%- include('../partials/search-bar') %>
+  <%- include('../partials/header.ejs') %>
 
     <main>
-        <form action='/users/register'  class="form-container" method="POST" enctype="multipart/form-data">
-            <h6 class="text-title">Registrarse</h6>
-            <label for="firstName">Nombre
-                <input class="input-form" type="text" name="firstName" id="firstName" placeholder="Ingrese su nombre"
-                    required>
-            </label>
-            <label for="lastName">Apellido
-                <input class="input-form" type="text" name="lastName" id="lastName" placeholder="Ingrese su apellido"
-                    required>
-            </label>
-            <label for="displayName">Nombre de usuario
-                <input class="input-form" type="text" name="displayName" id="displayName"
-                    placeholder="Ingrese nombre de usuario">
-            </label>
-            <label for="email">Email
-                <input class="input-form" type="email" name="email" id="email" placeholder="Ingrese su email" required>
-            </label>
-            <label for="password">Contraseña
-                <input class="input-form" type="password" name="password" id="password"
-                    placeholder="Ingrese su contraseña" required>
-            </label>
-            <h6 class="text-title">Por favor, introduzca su fecha de nacimiento</h6>
-            <div class="container-input-label">
-                <label for="birthDate">Fecha de nacimiento</label>
-                <input id="birthDate" name="birthDate" type="date" class="input-form" required />
-            </div>
-            <div class="container-input-label">
-                <label for="country">País</label>
-                <select name="country" id="country">
-                    <option value="argentina">Argentina</option>
-                    <option value="bolivia">Bolivia</option>
-                    <option value="brasil">Brasil</option>
-                    <option value="chile">Chile</option>
-                    <option value="mexico">Mexico</option>
-                    <option value="paraguay">Paraguay</option>
-                    <option value="peru">Perú</option>
-                    <option value="uruguay">Uruguay</option>
-                </select>
-            </div>
-            <div class="container-input-type-file">
-                <label for="avatar">Agregar avatar</label>
-                <input type="file" name="avatar" id="avatar">
-            </div>
-            <div class="btn-container">
-                <button type="submit" class="btn btn-primary">
-                    Crear cuenta
-                </button>
-            </div>
-            <p>
-                <em>¿Tenes cuenta?</em>
-            </p>
-            <a href="/users/login">
-                <div class="container-iniciar-sesion">
-                    <p id="mensaje-iniciar-sesion">Iniciar sesión</p>
-                </div>
-            </a>
-        </form>
+      <form action="/users/register" class="form-container" method="POST" enctype="multipart/form-data">
+        <h6 class="text-title">Registrarse</h6>
+        <label for="first_name">Nombre
+          <input class="input-form" type="text" name="first_name" id="first_name" placeholder="Ingrese su nombre"
+            required />
+        </label>
+        <label for="last_name">Apellido
+          <input class="input-form" type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido"
+            required />
+        </label>
+        <label for="display_name">Nombre de usuario
+          <input class="input-form" type="text" name="display_name" id="display_name"
+            placeholder="Ingrese nombre de usuario" />
+        </label>
+        <label for="email">Email
+          <input class="input-form" type="email" name="email" id="email" placeholder="Ingrese su email" required />
+        </label>
+        <label for="password">Contraseña
+          <input class="input-form" type="password" name="password" id="password" placeholder="Ingrese su contraseña"
+            required />
+        </label>
+        <div class="container-input-label">
+          <label for="date_of_birth">Fecha de nacimiento</label>
+          <input id="date_of_birth" name="date_of_birth" type="date" class="input-form" required />
+        </div>
+        <div class="container-input-label">
+          <label for="country">País</label>
+          <select name="country" id="country">
+            <option value="argentina">Argentina</option>
+            <option value="bolivia">Bolivia</option>
+            <option value="brasil">Brasil</option>
+            <option value="chile">Chile</option>
+            <option value="mexico">Mexico</option>
+            <option value="paraguay">Paraguay</option>
+            <option value="peru">Perú</option>
+            <option value="uruguay">Uruguay</option>
+          </select>
+        </div>
+
+        <div class="container-input-type-file">
+          <label for="avatar" id="avatar">Agregar avatar</label>
+          <input type="file" name="avatar" id="avatar" />
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary">Crear cuenta</button>
+        </div>
+        <p>
+          <em>¿Tenes cuenta?</em>
+        </p>
+        <a href="/users/login">
+          <div class="container-iniciar-sesion">
+            <p id="mensaje-iniciar-sesion">Iniciar sesión</p>
+          </div>
+        </a>
+      </form>
     </main>
 
     <%- include('../partials/footer') %>
 
+      <script src="/js/validationsRegister.js"></script>
 </body>
 
 </html>

@@ -1,82 +1,436 @@
-header{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #222429;
-    font-family: 'roboto';
-    padding: 5px 15px;
-    height: 120px;
+    header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #222429;
+        font-family: 'roboto';
+        padding: 5px 15px;
+        height: 120px;
+    }
+    .link-header {
+        color: rgba(250, 250, 250, 0.7);
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+    .logo-header-2-a{
+        width: 50px;
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+    .header-logo{
+        width: 100px;
+    }
+    .detail-header{
+        width: 40%;
+    }
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 30px;
+        right: 105px;
+        font-size: 1rem;
+        visibility: hidden;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 24px;
+        right: 100px;
+    }
+    .user-log {
+        align-items: flex-start;
+    }
+    #submit{
+        position: absolute;
+        top: 26.5px;
+        right: 100px;
+        height: 27px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 0s;
+        box-shadow: 0 0 10px white;
+        visibility: hidden;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    #icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 25px;
+        right: 40px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 105px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 200px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+@media (min-width: 300px){
+    #submit{
+        position: absolute;
+        top: 46.5px;
+        right: 190px;
+        height: 27px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 0s;
+        box-shadow: 0 0 10px white;
+        visibility: hidden;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 30.1px;
+        right: 90px;
+        font-size: 1rem;
+        visibility: hidden;
+    }
 }
-.link-header {
-    color: rgba(250, 250, 250, 0.7);
-    text-decoration: none;
-    font-size: 1.3rem;
+@media (min-width: 450px) {
+    #submit{
+        visibility: visible;
+        transition: 0s;
+    }
+    #saludo{
+        visibility: visible;
+        position: absolute;
+        top: 50px;
+    }
 }
-.logo-header-2-a{
-    width: 100px;
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    
+    
+@media (min-width: 500px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 48px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
+    }
+    #submit{
+        position: absolute;
+        top: 46.5px;
+        right: 230px;
+        height: 27px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 0s;
+        box-shadow: 0 0 10px white;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    .icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 100px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 200px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
 }
-.header-logo{
-    width: 100px;
+@media (min-width: 640px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 48px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
+    }
+    #submit{
+        position: absolute;
+        top: 46.5px;
+        right: 230px;
+        width: 100px;
+        height: 27px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 0s;
+        box-shadow: 0 0 10px white;
+        visibility: hidden;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    .icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 45px;
+        right: 120px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 45px;
+        right: 210px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+} 
+@media (min-width: 765px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 48px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
+    }
+    #submit{
+        position: absolute;
+        top: 46.5px;
+        height: 27px;
+        right: 230px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px white;
+        visibility: hidden;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    #icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 45px;
+        right: 80px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 45px;
+        right: 170px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
 }
-.detail-header{
-    width: 40%;
-}
-.logo-header{
-    width: 100px;
-    position: absolute;
-    left: 10px;
-    top: 15px;
-}
-.link-header-detail-header{
-    position: absolute;
-    left: 130px;
-    top: 45px;
-    color: white;
-}
-#saludo{
-    color: white;
-    position: absolute;
-    right: 150px;
-    top: 45px;
-}
-#submit{
-    position: absolute;
-    top: 37px;
-    right: 260px;
-    width: 100px;
-    height: 40px;
-    border: 1px solid rgb(90, 90, 90);
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-}
-button[type="submit"]{
-    color: grey;
-}
-.icon-user{
-    color: white;
-    font-size: 3rem;
-    position: absolute;
-    top: 20px;
-    right: 40px;
-}
-.link-header-register-header{
-    color: white;
-    position: absolute;
-    top: 40px;
-    right: 130px;
-    font-size: 1.3rem;
-}
-.link-header-login-header{
-    color: white;
-    position: absolute;
-    top: 40px;
-    right: 230px;
-    font-size: 1.3rem;
-}
-@media (max-width: 600px) {
+@media (min-width: 860px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 48px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
+    }
+    #submit{
+        position: absolute;
+        top: 46.5px;
+        right: 230px;
+        height: 27px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 1s;
+        box-shadow: 0 0 10px white;
+        visibility: visible;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    #icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 25px;
+        right: 40px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 45px;
+        right: 130px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 45px;
+        right: 230px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
 }

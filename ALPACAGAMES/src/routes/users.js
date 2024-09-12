@@ -5,9 +5,12 @@ const uploadFile = require('../middlewares/registerImage.js');
 const areYouLogged = require('../middlewares/question');
 const areNotYouLogged = require('../middlewares/otherQuestion');
 const validations = require('../middlewares/validation');
+const adminQuestion = require('../middlewares/adminQuestion.js');
+
+
 // Routes for users - Login and Register
-router.get('/login', areYouLogged, validations.login, usersController.login);
-router.post('/login', usersController.processLogin);
+router.get('/login', areYouLogged, usersController.login);
+router.post('/login', validations.login, adminQuestion,usersController.processLogin);
 // ------------------------------------------------------ //
 router.get('/register', areYouLogged, usersController.register);
 router.post(
@@ -19,5 +22,4 @@ router.post(
 
 router.get('/logout', areNotYouLogged, usersController.logout);
 
-router.get('/perfil', areNotYouLogged, usersController.perfil);
 module.exports = router;

@@ -1,77 +1,83 @@
 <!-- FOOTER DEL INDEX.HTML -->
 <footer id="main-footer" class="py-2">
-    <div class="container footer-container">
-        <div>
-            <div class="img-logo">
-                <img src="/img/Alpaca-celu.svg" alt="NewsGrid">
-            </div>
-            <p class="text-footer text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Facere unde dolorum explicabo, dolores omnis rem voluptatem esse placeat sit delectus!</p>
-        </div>
-
-        <div>
-            <h3 class="title-footer">Email Newsletter</h3>
-            <p class="text-footer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <form>
-                <input type="email" placeholder="Enter Email..." class="email">
-                <input type="submit" value="Subscribe" class="button button-primary">
-            </form>
-        </div>
-
-        <div>
-            <h3 class="title-footer">Site Links</h3>
-            <ul class="list">
-                <li><a href="#">Help & Support</a></li>
-                <li><a href="#">Privacy & Policy</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h3 class="title-footer">Join Out Club</h3>
-            <p class="text-footer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, vero!</p>
-            <a href="#" class="button button-primary">Join Now</a>
-        </div>
-
-        <div>
-            <p>
-                Copyright &copy; 2023, All Rights Reeserved
-            </p>
-        </div>
+  <div class="container footer-container">
+    <div>
+      <div class="img-logo">
+        <img src="/img/Alpaca-celu.svg" alt="NewsGrid" />
+      </div>
+      <p class="text-footer text-description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere unde
+        dolorum explicabo, dolores omnis rem voluptatem esse placeat sit
+        delectus!
+      </p>
     </div>
+
+    <div>
+      <h3 class="title-footer">Email Newsletter</h3>
+      <p class="text-footer">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <form>
+        <input type="email" placeholder="Enter Email..." class="email" />
+        <input type="submit" value="Subscribe" class="button button-primary" />
+      </form>
+    </div>
+
+    <div>
+      <h3 class="title-footer">Site Links</h3>
+      <ul class="list">
+        <li><a href="#">Help & Support</a></li>
+        <li><a href="#">Privacy & Policy</a></li>
+        <li><a href="#">About Us</a></li>
+        <% if (!locals.userAreLogged){ %>
+        <li><a href="#">Contact</a></li>
+        <% }else if (locals.userAreLogged.id == 1){ %>
+        <li><a href="/products/create">Crear un producto</a></li>
+        <li><a href="/products">Lista de productos</a></li>
+        <% } else {%>
+        <li><a href="#">Contact</a></li>
+        <% } %>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="title-footer">Join Out Club</h3>
+      <p class="text-footer">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, vero!
+      </p>
+      <a href="#" class="button button-primary">Join Now</a>
+    </div>
+
+    <div>
+      <p>Copyright &copy; 2023, All Rights Reeserved</p>
+    </div>
+  </div>
 </footer>
-
-
-
-
-
-
 
 <!-- FOOTER DEL SHOP.HTML -->
 <!-- 
 <footer>
-    <hr class="parting-line">
-    <img class="logo-footer" src="/img/Alpaca-celu.svg" alt="logo">
-    <div class="info">
-        <a href="#">QUIENES SOMOS</a>
-        <hr>
-        <a href="#">INFORMACION</a>
-        <hr>
-        <a href="#">CONTACTO</a>
-        <hr>
-        <a href="#">RECURSO</a>
-    </div>
-    <section class="redes">
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-    </section>
-    <section class="legal-terms">
-        <hr class="parting-line">
-        <p>Terminos Legales</p>
-    </section>
-    <h3 class="copyright">copyright ©</h3>
+  <hr class="parting-line">
+  <img class="logo-footer" src="/img/Alpaca-celu.svg" alt="logo">
+  <div class="info">
+      <a href="#">QUIENES SOMOS</a>
+      <hr>
+      <a href="#">INFORMACION</a>
+      <hr>
+      <a href="#">CONTACTO</a>
+      <hr>
+      <a href="#">RECURSO</a>
+  </div>
+  <section class="redes">
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+  </section>
+  <section class="legal-terms">
+      <hr class="parting-line">
+      <p>Terminos Legales</p>
+  </section>
+  <h3 class="copyright">copyright ©</h3>
 </footer> -->
